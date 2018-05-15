@@ -1,1 +1,1 @@
-alert('JS żyje!');
+console.log('JS żyje!');
