@@ -3,9 +3,10 @@ package pl.coderslab.app;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service
+@Component
 public class MemoryBookService {
 	
 	private List<Book> list;

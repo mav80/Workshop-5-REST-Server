@@ -1,7 +1,10 @@
 package pl.coderslab.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -17,6 +20,17 @@ public class BookController {
 	public BookController(MemoryBookService memoryBookService) {
 		this.memoryBookService = memoryBookService;
 	}
+	
+	@GetMapping("/books/all")
+	@ResponseBody
+	public List<Book> getBooks() {
+		return memoryBookService.getList();
+	}
+	
+	
+	
+	
+	
 
 	
 	
