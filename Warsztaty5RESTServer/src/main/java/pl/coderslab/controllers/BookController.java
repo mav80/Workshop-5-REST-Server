@@ -2,17 +2,22 @@ package pl.coderslab.controllers;
 
 import java.util.List;
 
+import javax.xml.ws.Response;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import pl.coderslab.app.Book;
 import pl.coderslab.app.MemoryBookService;
 
-@Controller
+@RestController
 public class BookController {
 	
 	public MemoryBookService memoryBookService;
@@ -33,6 +38,13 @@ public class BookController {
 	@ResponseBody
 	public Book getSingleBook(@PathVariable long bookId) {
 		return memoryBookService.getSingleBookById(bookId);
+	}
+	
+	@PostMapping("/books/add/")
+	@ResponseBody
+	public String addBook(@RequestBody Book book) {
+		memoryBookService.saveBookToList(book);
+		return "Książkę dodano do listy.";
 	}
 	
 	

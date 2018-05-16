@@ -20,13 +20,32 @@ public class MemoryBookService {
 	list.add(new Book(4L, "57454356", "Księga jesiennych demonów", "Jarosław Grzędowicz", "Fabryka Słów", "horror"));
 	}
 	
+	public long getNextId() {
+		List<Book> books = getList();
+		long nextId = 0;
+		
+		if(!books.isEmpty()) {
+			for(Book book : books) {
+				if(book.getId() > nextId) {
+					nextId = book.getId();
+				}
+			}
+		}
+		System.out.println("Następne wolne id wynosi " + (nextId+1));
+		return ++nextId;
+	}
+	
 	public List<Book> getList() {
 		return list;
-		}
+	}
+	
+	
 	
 	public void setList(List<Book> list) {
 		this.list = list;
-		}
+	}
+	
+	
 	
 	public Book getSingleBookById(long bookId) {
 		
@@ -40,5 +59,17 @@ public class MemoryBookService {
 		
 		return null;
 	}
+	
+	
+	
+	public void saveBookToList(Book book) {
+		if(book != null) {
+			book.setId(getNextId());
+			list.add(book);
+		}
+		
+	}
+	
+	
 
 }
