@@ -7,6 +7,7 @@ import javax.xml.ws.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,7 +43,7 @@ public class BookController {
 	
 	@PostMapping("/books/add/")
 	@ResponseBody
-	public String addBook(@RequestBody Book book) {
+	public String addBook(@ModelAttribute Book book) {
 		memoryBookService.saveBookToList(book);
 		return "Książkę dodano do listy.";
 	}

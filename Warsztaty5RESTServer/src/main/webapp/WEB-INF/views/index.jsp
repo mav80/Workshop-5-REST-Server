@@ -13,38 +13,38 @@
 	</head>
 	<body>
 		<h1>Hello World Warsztat 5 views!</h1>
-		       <center>
-        <span style="display: inline-block">
-            <form action="books/add/" method="post" name="book" id="newBook">
-            	<input type="number" name="id" placeholder="id">
-                <input type="text" name="title" placeholder="tytuł">
-                <input type="text" name="author" placeholder="autor"><br>
-                <input type="text" name="publisher" placeholder="wydawca">
-                <input type="text" name="type" placeholder="gatunek"><br>
-                <input type="text" name="isbn" placeholder="numer isbn"><br>
-                <input type="submit" id="submitNewBook" class="sendButton" value="Utwórz nową książkę">
-            </form>
-        </span>
-
-        <span style="display: inline-block">
-            <form id="bookResetForm">
-            <input type="submit" id="bookResetButton" class="sendButton" value="Przywróć początkową listę książek">
-            </form>
-        </span>
-
-        <span style="display: inline-block">
-            <form id="editBookForm">
-            <input type="text" name="title" placeholder="tytuł">
-            <input type="text" name="author" placeholder="autor"><br>
-            <input type="text" name="publisher" placeholder="wydawca">
-            <input type="text" name="type" placeholder="gatunek"><br>
-            <input type="text" name="isbn" placeholder="numer isbn">
-            <input type="text" name="id" placeholder="id"><br>
-            <input type="submit" id="submitEditBook" class="sendButton" value="Zmień książkę">
-            </form>
-        </span>
-       
-        <ul id="books"></ul>
+		<center>
+	        <span style="display: inline-block">
+		        <form:form method="post" action="books/add/" modelAttribute="book">
+					<form:input path="isbn" placeholder="numer isbn" type="number"/>
+					<form:input path="title" placeholder="tytuł"/><br>
+					<form:input path="author" placeholder="autor"/>
+					<form:input path="publisher" placeholder="wydawca"/><br>
+					<form:input path="type" placeholder="gatunek"/><br>
+					<input type="submit" value="Utwórz nową książkę">
+				</form:form>
+	        </span>
+	
+	        <span style="display: inline-block">
+	            <form id="bookResetForm">
+	            <input type="submit" id="bookResetButton" class="sendButton" value="Przywróć początkową listę książek">
+	            </form>
+	        </span>
+	
+	        <span style="display: inline-block">
+	            <form id="editBookForm">
+	            <input type="text" name="title" placeholder="tytuł">
+	            <input type="text" name="author" placeholder="autor"><br>
+	            <input type="text" name="publisher" placeholder="wydawca">
+	            <input type="text" name="type" placeholder="gatunek"><br>
+	            <input type="text" name="isbn" placeholder="numer isbn">
+	            <input type="text" name="id" placeholder="id"><br>
+	            <input type="submit" id="submitEditBook" class="sendButton" value="Zmień książkę">
+	            </form>
+	        </span>
+	       
+	        <ul id="books"></ul>
         </center>
+        
 	</body>
 </html>
