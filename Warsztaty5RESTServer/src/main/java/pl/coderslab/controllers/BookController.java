@@ -42,10 +42,10 @@ public class BookController {
 	}
 	
 	@PostMapping("/books/add/")
-	@ResponseBody
+	//@ResponseBody
 	public String addBook(@ModelAttribute Book book) {
 		memoryBookService.saveBookToList(book);
-		return "Książkę dodano do listy.";
+		return "Ksiazke dodano do listy.";
 	}
 	
 	
