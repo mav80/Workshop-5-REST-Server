@@ -31,16 +31,17 @@
 	            </form>
 	        </span>
 	
+	        
 	        <span style="display: inline-block">
-	            <form id="editBookForm">
-	            <input type="text" name="title" placeholder="tytuł">
-	            <input type="text" name="author" placeholder="autor"><br>
-	            <input type="text" name="publisher" placeholder="wydawca">
-	            <input type="text" name="type" placeholder="gatunek"><br>
-	            <input type="text" name="isbn" placeholder="numer isbn">
-	            <input type="text" name="id" placeholder="id"><br>
-	            <input type="submit" id="submitEditBook" class="sendButton" value="Zmień książkę">
-	            </form>
+	        	<form:form method="post" action="books/edit/" modelAttribute="book">
+	        		<form:input path="id" placeholder="id" type="number"/>
+					<form:input path="isbn" placeholder="numer isbn" type="number"/><br>
+					<form:input path="title" placeholder="tytuł"/>
+					<form:input path="author" placeholder="autor"/><br>
+					<form:input path="publisher" placeholder="wydawca"/>
+					<form:input path="type" placeholder="gatunek"/><br>
+		            <input type="submit" id="submitEditBook" class="sendButton" value="Zmień zbindowaną książkę">
+	        	</form:form>
 	        </span>
 	       
 	        <ul id="books"></ul>

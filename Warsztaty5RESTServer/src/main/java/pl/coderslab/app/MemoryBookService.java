@@ -51,9 +51,11 @@ public class MemoryBookService {
 		
 		List<Book> books = getList();
 		
-		for(Book book : books) {
-			if(book.getId() == bookId) {
-				return book;
+		if(!books.isEmpty()) {
+			for(Book book : books) {
+				if(book.getId() == bookId) {
+					return book;
+				}
 			}
 		}
 		
@@ -67,7 +69,44 @@ public class MemoryBookService {
 			book.setId(getNextId());
 			list.add(book);
 		}
+	}
+	
+	
+	
+	public void deleteBook(long bookId) {
+		List<Book> books = getList();
 		
+		Book bookToRemove = new Book();
+		
+		if(!books.isEmpty()) {
+			for(Book book : books) {
+				if(book.getId() == bookId) {
+					bookToRemove = book;
+					break;
+				}
+			}
+			books.remove(bookToRemove);
+		}
+	}
+	
+	
+	
+	
+	public void editBook(Book bookToChange) {
+		List<Book> books = getList();
+		
+		if(!books.isEmpty()) {
+			for(Book book : books) {
+				if(book.getId() == bookToChange.getId()) {
+					book.setAuthor(bookToChange.getAuthor());
+					book.setPublisher(bookToChange.getPublisher());
+					book.setTitle(bookToChange.getTitle());
+					book.setType(bookToChange.getType());
+					book.setIsbn(bookToChange.getIsbn());
+					break;
+				}
+			}
+		}
 	}
 	
 	
