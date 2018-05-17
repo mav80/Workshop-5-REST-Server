@@ -14,5 +14,11 @@ public class HomeController {
 		model.addAttribute("book", new Book());
 		return "index";
 	}
+	
+	@GetMapping("/servertest")
+	public String serverTest(Model model) {
+		model.addAttribute("book", new Book());
+		return "ServerTest";
+	}
 
 }

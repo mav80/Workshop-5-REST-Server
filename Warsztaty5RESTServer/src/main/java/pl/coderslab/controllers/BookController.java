@@ -49,7 +49,7 @@ public class BookController {
 		return "Ksiazke dodano do listy.";
 	}
 	
-	@DeleteMapping("/books/delete/{bookId}")
+	@DeleteMapping("/books/remove/{bookId}") 
 	public String deleteBook(@PathVariable long bookId) {
 		memoryBookService.deleteBook(bookId);
 		return "Ksiazke usunieto z listy.";
