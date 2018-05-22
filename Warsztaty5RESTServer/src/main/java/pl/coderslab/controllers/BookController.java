@@ -4,6 +4,8 @@ package pl.coderslab.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -55,11 +57,17 @@ public class BookController {
 		return "Ksiazke usunieto z listy.";
 	}
 	
+	
 	@PutMapping("/books/edit/")
-	public @ResponseBody Book editBook(@RequestBody Book book) {
-		memoryBookService.editBook(book);
-		return book;
+	public ResponseEntity<Book> editBook(@RequestBody Book book) {
+		Boolean status = memoryBookService.editBook(book);
+		//System.out.println(status);
+		if(status) {
+			return  new ResponseEntity<>(HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
+	
 	
 	@DeleteMapping("/books/remove/all") 
 	public String resetListOfBooks() {

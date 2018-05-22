@@ -11,6 +11,6 @@ public interface BookService {
 	//void setList(List<Book> list);
 	void saveBook(Book book);
 	void deleteBook(long bookId);
-	void editBook(Book bookToChange);
+	Boolean editBook(Book bookToChange);
 
 }

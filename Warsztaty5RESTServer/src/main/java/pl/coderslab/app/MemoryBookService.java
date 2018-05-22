@@ -87,7 +87,7 @@ public class MemoryBookService implements BookService {
 	
 	
 	@Override
-	public void editBook(Book bookToChange) {
+	public Boolean editBook(Book bookToChange) {
 		List<Book> books = getAllBooks();
 		
 		if(!books.isEmpty()) {
@@ -98,10 +98,12 @@ public class MemoryBookService implements BookService {
 					book.setTitle(bookToChange.getTitle());
 					book.setType(bookToChange.getType());
 					book.setIsbn(bookToChange.getIsbn());
-					break;
+					return true;
 				}
+				return false;
 			}
 		}
+		return false;
 	}
 	
 	public void listReset() {
