@@ -9,11 +9,19 @@
     	<script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 		<script src="<%out.print(request.getContextPath());%>/static/js/app.js"></script>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Warsztat 5 - my own REST server</title>
+		<title>Warsztat 5 - REST server</title>
 	</head>
 	<body>
-		<h1>Hello World Warsztat 5 server test!</h1>
+		<h3 style="text-align: center">Warsztat 5 - SPRING MVC, REST server</h3>
+
+        <p style="text-align: justify">Celem warsztatu jest jest napisanie funkcjonalności backendowej do katalogowania książek metodą 
+        REST z poprzedniego warsztatu. Do stworzenia API wykorzystałem Spring MVC, bibliotekę Jackson oraz dodatkowe adnotacje.
+        Warstwa kliencka, napisana w HTML-u  oraz JavaScripcie, tak jak poprzednio, komunikuje się z serwerem za pomocą AJAX i 
+        po najechaniu myszką na element zawierający tytuł książki pobiera w formacie JSON dane o książce 
+        a następnie wyświetla je poniżej.</p>
+        
 		<center>
+		
 	        <span style="display: inline-block">
 		        <form:form method="post" action="books/add/" modelAttribute="book" id="newBook">
 					<form:input path="isbn" placeholder="numer isbn" type="number"/>
@@ -45,6 +53,7 @@
 	        </span>
 	       
 	        <ul id="books"></ul>
+	        
         </center>
         
 	</body>
