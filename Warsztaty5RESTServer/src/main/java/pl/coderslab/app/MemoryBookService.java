@@ -12,7 +12,7 @@ public class MemoryBookService implements BookService {
 	
 	public MemoryBookService() {
 		list = new ArrayList<>();
-		listReset();
+		bookListReset();
 	}
 	
 	public long getNextId() {
@@ -106,7 +106,8 @@ public class MemoryBookService implements BookService {
 		return false;
 	}
 	
-	public void listReset() {
+	@Override
+	public void bookListReset() {
 		list.clear();
 		list.add(new Book(1L, "8854433", "Wampir z MO", "Andrzej Pilipiuk",	"Fabryka Słów", "science-fiction"));
 		list.add(new Book(2L, "656857", "Szczury Wrocławia", "Robert J. Szmidt", "Helion", "horror"));

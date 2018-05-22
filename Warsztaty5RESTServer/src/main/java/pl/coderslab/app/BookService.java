@@ -12,5 +12,7 @@ public interface BookService {
 	void saveBook(Book book);
 	void deleteBook(long bookId);
 	Boolean editBook(Book bookToChange);
+	
+	void bookListReset();
 
 }

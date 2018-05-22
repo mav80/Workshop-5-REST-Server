@@ -17,50 +17,51 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import pl.coderslab.app.Book;
+import pl.coderslab.app.BookService;
 import pl.coderslab.app.MemoryBookService;
 
 @RestController
 public class BookController {
 	
-	public MemoryBookService memoryBookService;
+	public BookService bookService;
 	
 	@Autowired
-	public BookController(MemoryBookService memoryBookService) {
-		this.memoryBookService = memoryBookService;
+	public BookController(BookService bookService) {
+		this.bookService = bookService;
 	}
 	
 	@GetMapping("/books/all")
 	@ResponseBody
 	public List<Book> getAllBooks() {
-		return memoryBookService.getAllBooks();
+		return bookService.getAllBooks();
 	}
 	
 	
 	@GetMapping("/books/{bookId}")
 	@ResponseBody
 	public Book getSingleBook(@PathVariable long bookId) {
-		return memoryBookService.getSingleBookById(bookId);
+		return bookService.getSingleBookById(bookId);
 	}
 	
 	
 	@PostMapping("/books/add/")
 	public @ResponseBody Book addBook(@RequestBody Book book) {
 		//System.out.println(book);
-		memoryBookService.saveBook(book);
+		bookService.saveBook(book);
 		return book;
 	}
 	
 	
 	@DeleteMapping("/books/remove/{bookId}") 
 	public String deleteBook(@PathVariable long bookId) {
-		memoryBookService.deleteBook(bookId);
+		bookService.deleteBook(bookId);
 		return "Ksiazke usunieto z listy.";
 	}
 	
 	
 	@PutMapping("/books/edit/")
 	public ResponseEntity<Book> editBook(@RequestBody Book book) {
-		Boolean status = memoryBookService.editBook(book);
+		Boolean status = bookService.editBook(book);
 		//System.out.println(status);
 		if(status) {
 			return  new ResponseEntity<>(HttpStatus.OK);
@@ -71,7 +72,7 @@ public class BookController {
 	
 	@DeleteMapping("/books/remove/all") 
 	public String resetListOfBooks() {
-		memoryBookService.listReset();
+		bookService.bookListReset();
 		return "Lista zostala zresetowana.";
 	}
 	
