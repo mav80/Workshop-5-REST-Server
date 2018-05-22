@@ -67,9 +67,9 @@ public class BookController {
 	}
 	
 	@PutMapping("/books/edit/")
-	public String editBook(@ModelAttribute Book book) {
+	public @ResponseBody Book editBook(@RequestBody Book book) {
 		memoryBookService.editBook(book);
-		return "Ksiazka zostala zmieniona.";
+		return book;
 	}
 	
 	

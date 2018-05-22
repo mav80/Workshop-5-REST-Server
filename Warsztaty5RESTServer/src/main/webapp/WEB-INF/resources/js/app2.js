@@ -302,7 +302,7 @@
         });
         
         var functionDataType = "text";
-        var functionUrl = serverUrl+'edit';
+        var functionUrl = serverUrl+'edit/';
         var functionHeaders = { 'Accept': 'application/json', 'Content-Type': 'application/json' };
         var functionData = JSON.stringify(editBook);
         var functionType = "PUT";
