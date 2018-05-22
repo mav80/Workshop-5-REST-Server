@@ -1,5 +1,10 @@
 package pl.coderslab.controllers;
 
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+
 import java.util.List;
 
 import javax.xml.ws.Response;
@@ -14,7 +19,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import pl.coderslab.app.Book;
@@ -43,11 +51,14 @@ public class BookController {
 		return memoryBookService.getSingleBookById(bookId);
 	}
 	
+	
 	@PostMapping("/books/add/")
-	public String addBook(@ModelAttribute Book book) {
+	public @ResponseBody Book addBook(@RequestBody Book book) {
+		//System.out.println(book);
 		memoryBookService.saveBookToList(book);
-		return "Ksiazke dodano do listy.";
+		return book;
 	}
+	
 	
 	@DeleteMapping("/books/remove/{bookId}") 
 	public String deleteBook(@PathVariable long bookId) {

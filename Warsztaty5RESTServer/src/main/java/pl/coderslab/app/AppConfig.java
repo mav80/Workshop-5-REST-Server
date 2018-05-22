@@ -11,6 +11,7 @@ import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -33,6 +34,10 @@ public class AppConfig implements WebMvcConfigurer {
 		return viewResolver;
 	}
 	
+	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+		configurer.enable();
+	}
+	
 //	@Bean
 //	public LocalEntityManagerFactoryBean entityManagerFactory() {
 //	LocalEntityManagerFactoryBean emfb = new LocalEntityManagerFactoryBean();
@@ -52,7 +57,7 @@ public class AppConfig implements WebMvcConfigurer {
 		registry.addResourceHandler("/static/**").addResourceLocations("/WEB-INF/resources/").setCachePeriod(31056926);
 	}
 	
-	//@Override
+	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 	registry.addMapping("/**").allowedMethods("GET", "POST", "PUT", "DELETE").allowedOrigins("http://localhost");
 	}

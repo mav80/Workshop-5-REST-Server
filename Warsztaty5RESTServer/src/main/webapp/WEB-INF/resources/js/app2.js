@@ -107,7 +107,7 @@
     //exercise 5
 
     var newBookForm = $('#newBook');
-    //console.log(newBookForm);
+    console.log(newBookForm);
 
     newBookForm.on('submit', function(e){
     
@@ -124,7 +124,7 @@
             //console.log(newBook);
 
             var functionDataType = "json";
-            var functionUrl = serverUrl+'add';
+            var functionUrl = serverUrl+'add/';
             var functionHeaders = { 'Accept': 'application/json', 'Content-Type': 'application/json' };
             var functionData = JSON.stringify(newBook);
             var functionType = "POST";
@@ -140,23 +140,24 @@
                 alert("Wystąpił błąd podczas dodawania książki!");
             };
 
-            doAjaxJSON(functionDataType, functionUrl, functionType, functionSuccess, functionError, functionData, functionHeaders) //call fuction from exercise 7
-            
+            doAjaxJSON(functionDataType, functionUrl, functionType, functionSuccess, functionError, functionData, functionHeaders); //call fuction from exercise 7        
            
         } else {
+        	console.log(newBook);
             tempAlert($('ul#books'), "Nie można utworzyć książki bez tytułu!", 2000)
 
         }
 
-        e.preventDefault(); //without it an error is thrown while sending json
+        e.preventDefault();
         //this.reset(); //resets the form to be empty again - not necessary if page reloads  
     
     
     }); 
-
-
-
-
+    
+   
+    
+    
+    
 
 
 
@@ -241,8 +242,9 @@
     //here we fiddle with the update button on each book - upon clicking book data is sent to edit form
 
     function ajaxOnEdit() {
-
+    	
         setTimeout(function(){
+        	
             
             var editLinks = $('.editLink');
 
@@ -260,8 +262,8 @@
                         //console.log("Wysłanie do edycji udane.");
                         //console.log(json);
 
-                        $(editBookForm).find('input[type!=submit]').each(function (index, elem) {
-                            elem.value = json[elem.name];
+                        $(editBookForm).find('input[type!=submit]').each(function (index, elem) {                        	
+                            elem.value = json[elem.name];            	
                         });
                     }
                     var functionError = function() {
@@ -300,7 +302,7 @@
         });
         
         var functionDataType = "text";
-        var functionUrl = serverUrl+editBook.id+'/update';
+        var functionUrl = serverUrl+'edit';
         var functionHeaders = { 'Accept': 'application/json', 'Content-Type': 'application/json' };
         var functionData = JSON.stringify(editBook);
         var functionType = "PUT";
