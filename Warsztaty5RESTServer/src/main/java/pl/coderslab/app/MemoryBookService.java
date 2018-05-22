@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 @Component
-public class MemoryBookService {
+public class MemoryBookService implements BookService {
 	
 	private List<Book> list;
 	
@@ -21,7 +20,7 @@ public class MemoryBookService {
 	}
 	
 	public long getNextId() {
-		List<Book> books = getList();
+		List<Book> books = getAllBooks();
 		long nextId = 0;
 		
 		if(!books.isEmpty()) {
@@ -35,10 +34,10 @@ public class MemoryBookService {
 		return ++nextId;
 	}
 	
-	public List<Book> getList() {
+	@Override
+	public List<Book> getAllBooks() {
 		return list;
 	}
-	
 	
 	
 	public void setList(List<Book> list) {
@@ -46,10 +45,10 @@ public class MemoryBookService {
 	}
 	
 	
-	
+	@Override
 	public Book getSingleBookById(long bookId) {
 		
-		List<Book> books = getList();
+		List<Book> books = getAllBooks();
 		
 		if(!books.isEmpty()) {
 			for(Book book : books) {
@@ -63,8 +62,8 @@ public class MemoryBookService {
 	}
 	
 	
-	
-	public void saveBookToList(Book book) {
+	@Override
+	public void saveBook(Book book) {
 		if(book != null) {
 			book.setId(getNextId());
 			list.add(book);
@@ -72,9 +71,9 @@ public class MemoryBookService {
 	}
 	
 	
-	
+	@Override
 	public void deleteBook(long bookId) {
-		List<Book> books = getList();
+		List<Book> books = getAllBooks();
 		
 		Book bookToRemove = new Book();
 		
@@ -91,9 +90,9 @@ public class MemoryBookService {
 	
 	
 	
-	
+	@Override
 	public void editBook(Book bookToChange) {
-		List<Book> books = getList();
+		List<Book> books = getAllBooks();
 		
 		if(!books.isEmpty()) {
 			for(Book book : books) {
