@@ -12,7 +12,7 @@
 		<title>Warsztat 5 - my own REST server</title>
 	</head>
 	<body>
-		<h1>Hello World Warsztat 5 views!</h1>
+		<h1>Hello World Warsztat 5 server test!</h1>
 		<center>
 	        <span style="display: inline-block">
 		        <form:form method="post" action="books/add/" modelAttribute="book" id="newBook">
