@@ -4,8 +4,10 @@
     
     console.log('DOM załadowany.');
 
-    //var serverUrl = "http://localhost:8080/Warsztaty5RESTServer/books/";
-    var serverUrl = "http://localhost:8080/Warsztaty5RESTServer/booksDb/";
+    var serverUrl1 = "http://localhost:8080/Warsztaty5RESTServer/books/";
+    var serverUrl2 = "http://localhost:8080/Warsztaty5RESTServer/booksDb/";
+    
+    var serverUrl = serverUrl1;
 
 
 
@@ -328,31 +330,31 @@
 
     //Handle the reset form button
         
-        var resetButton = $('#bookResetButton');
-        //console.log($('ul#books'));
+    var resetButton = $('#bookResetButton');
+    //console.log($('ul#books'));
 
-        resetButton.on('click', function(e) {
+    resetButton.on('click', function(e) {
 
-            var functionDataType = "text";
-            var functionUrl = serverUrl+'remove/all';
-            var functionType = "DELETE";
-            var functionSuccess = function() {
-                tempAlert($('ul#books'), "Listę książek poprawnie zresetowano.", 2000),
-                $('ul#books').fadeOut(),
-                buildBookList(), 
-                ajaxOnMouseover(), 
-                ajaxOnDelete(), 
-                ajaxOnEdit(),
-                $('ul#books').fadeIn();
-            };
-            var functionError = function() {
-                alert('Wystąpił błąd podczas resetowania listy ksiązek');
-            };
+        var functionDataType = "text";
+        var functionUrl = serverUrl+'remove/all';
+        var functionType = "DELETE";
+        var functionSuccess = function() {
+            tempAlert($('ul#books'), "Listę książek poprawnie zresetowano.", 2000),
+            $('ul#books').fadeOut(),
+            buildBookList(), 
+            ajaxOnMouseover(), 
+            ajaxOnDelete(), 
+            ajaxOnEdit(),
+            $('ul#books').fadeIn();
+        };
+        var functionError = function() {
+            alert('Wystąpił błąd podczas resetowania listy ksiązek');
+        };
 
-            doAjaxJSON(functionDataType, functionUrl, functionType, functionSuccess, functionError) //call fuction from exercise 7
-            e.preventDefault(); //without it an error is thrown while sending json
+        doAjaxJSON(functionDataType, functionUrl, functionType, functionSuccess, functionError) //call fuction from exercise 7
+        e.preventDefault(); //without it an error is thrown while sending json
 
-        })
+    })
 
 
 
@@ -387,6 +389,52 @@
         }   
 
     }
+        
+   
+    
+    
+    
+    //Here we handle the button for switching between data sources - data base on disk and in server's memory
+    
+    var switchButton = $('#dataSourceSwitchButton');
+    console.log(switchButton)
+    
+    switchButton.on('click', function(e) {
+    	
+    	if(serverUrl == serverUrl1) {
+    		serverUrl = serverUrl2;
+    		//switchButton.prop('value', 'Przełącz na pamięć');
+    		$('#currentDataSource2').text('baza danych');
+    	} else {
+    		serverUrl = serverUrl1;
+    		//switchButton.prop('value', 'Przełącz na bazę danych');
+    		$('#currentDataSource2').text('pamięć serwera');
+    	}
+    	
+    	buildBookList();
+        ajaxOnMouseover();
+        ajaxOnDelete();
+        ajaxOnEdit();
+        
+        e.preventDefault();
+
+    })
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
 }); //end of safety zone
 

@@ -33,10 +33,22 @@
 				</form:form>
 	        </span>
 	
-	        <span style="display: inline-block">
-	            <form id="bookResetForm">
-	            <input type="submit" id="bookResetButton" class="sendButton" value="Przywróć początkową listę książek">
-	            </form>
+			<span style="display: inline-block">
+
+		            <form id="buttonsForm" style="padding-top: 0px">
+			            <span style="display: block">
+							<input type="submit" id="bookResetButton" class="sendButton" value="Przywróć początkową listę książek">
+							
+							<input type="submit" id="dataSourceSwitchButton" class="sendButton" value="Przełącz źródło danych">
+				        </span>
+				        
+				        <p style="font-size: 0.3em"></p>
+				        
+			            <span>
+			           	 	<span id="currentDataSource1">Obecne źródło danych: </span><span id="currentDataSource2">pamięć serwera</span>
+		            	</span>
+		            </form>
+		      
 	        </span>
 	
 	        
@@ -48,7 +60,7 @@
 					<form:input path="author" placeholder="autor"/><br>
 					<form:input path="publisher" placeholder="wydawca"/>
 					<form:input path="type" placeholder="gatunek"/><br>
-		            <input type="submit" id="submitEditBook" class="sendButton" value="Zmień zbindowaną książkę">
+		            <input type="submit" id="submitEditBook" class="sendButton" value="Zmień książkę">
 	        	</form:form>
 	        </span>
 	       

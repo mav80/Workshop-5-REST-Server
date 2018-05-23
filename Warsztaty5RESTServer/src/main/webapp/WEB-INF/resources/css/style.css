@@ -41,3 +41,14 @@ form {
 .sendButton {
     margin-top: 8px;
 }
+
+#currentDataSource1 {
+	font-size: 0.8em;
+}
+
+#currentDataSource2 {
+	font-weight: bold;
+	font-size: 0.8em;
+	color: red;
+}
+
