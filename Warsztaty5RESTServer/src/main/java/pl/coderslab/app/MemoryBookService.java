@@ -116,19 +116,19 @@ public class MemoryBookService implements BookService {
 		list.add(new Book(5L, "8532", "Dallas '63", "Stephen King", "Prószyński i S-ka", "fantastyka"));
 		list.add(new Book(6L, "85434677", "The Catcher in the Rye", "Jerome David Salinger", "Albatros", "powieść"));
 		list.add(new Book(7L, "8945345", "Motoświat", "Jeremy Clarkson", "Insignis", "podróżnicze"));
-		list.add(new Book(8L, "86983", "Kroniki Jakuba Wędrowycza", "Andrzej Pilipiuk", "Fabryka Słów", "fantasy"));
-		list.add(new Book(9L, "5470941", "Uczta dla wron", "eorge R.R. Martin", "Zysk i S-ka", "fantasy"));
-		list.add(new Book(10L, "1556875434", "Silmarillion", "John Ronald Reuel Tolkien", "Czytelnik", "fantasy"));
-		list.add(new Book(11L, "543254", "Zabij mnie tato", "Stefan Darda", "Videograf", "thriller"));
-		list.add(new Book(12L, "12345678", "Nieznajomi", "Dean Koontz", "Albatros", "horror"));
-		list.add(new Book(13L, "54643453", "Dom na wyrębach", "Stefan Darda", "Videograf", "horror"));
-		list.add(new Book(14L, "23453467", "Czas pogardy", "Andrzej Sapkowski", "Putnam", "fantasy"));
-		list.add(new Book(15L, "9788324631766", "Thinking in Java", "Bruce Eckel", "Helion", "programowanie"));
-		list.add(new Book(16L, "354673456", "Rusz głową - Java", "Sierra Kathy, Bates Bert", "Menio", "programowanie"));
-		list.add(new Book(17L, "76857697846", "Java 2 - podstawy", "Cay Horstmann, Gary Cornell", "Kwazar", "programowanie"));
-		list.add(new Book(18L, "5476487", "W pustyni i w paszczy", "Henryk Sienkiewicz", "Horyzonty", "przygodowa"));
-		list.add(new Book(19L, "6967532", "Pan Tadeusz, czyli Ostatni zajazd na Litwie", "Adam Mickiewicz", "Ossolineum", "poemat"));
-		list.add(new Book(20L, "31q3544676", "Trawa jest zielona", "Captain Obvious", "Jakiś wydawca", "oczywistość"));
+		list.add(new Book(8L, "76857697846", "Java 2 - podstawy", "Cay Horstmann, Gary Cornell", "Kwazar", "programowanie"));
+		list.add(new Book(9L, "86983", "Kroniki Jakuba Wędrowycza", "Andrzej Pilipiuk", "Fabryka Słów", "fantasy"));
+		list.add(new Book(10L, "9788324631766", "Thinking in Java", "Bruce Eckel", "Helion", "programowanie"));
+//		list.add(new Book(11L, "5470941", "Uczta dla wron", "George R.R. Martin", "Zysk i S-ka", "fantasy"));
+//		list.add(new Book(12L, "1556875434", "Silmarillion", "John Ronald Reuel Tolkien", "Czytelnik", "fantasy"));
+//		list.add(new Book(13L, "543254", "Zabij mnie tato", "Stefan Darda", "Videograf", "thriller"));
+//		list.add(new Book(14L, "12345678", "Nieznajomi", "Dean Koontz", "Albatros", "horror"));
+//		list.add(new Book(15L, "54643453", "Dom na wyrębach", "Stefan Darda", "Videograf", "horror"));
+//		list.add(new Book(16L, "23453467", "Czas pogardy", "Andrzej Sapkowski", "Putnam", "fantasy"));
+//		list.add(new Book(17L, "354673456", "Rusz głową - Java", "Sierra Kathy, Bates Bert", "Menio", "programowanie"));
+//		list.add(new Book(18L, "5476487", "W pustyni i w paszczy", "Henryk Sienkiewicz", "Horyzonty", "przygodowa"));
+//		list.add(new Book(19L, "6967532", "Pan Tadeusz, czyli Ostatni zajazd na Litwie", "Adam Mickiewicz", "Ossolineum", "poemat"));
+//		list.add(new Book(20L, "31q3544676", "Trawa jest zielona", "Captain Obvious", "Jakiś wydawca", "oczywistość"));
 	}
 	
 	
