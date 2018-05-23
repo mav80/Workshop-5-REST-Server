@@ -15,12 +15,12 @@ public class DatabaseBookService implements BookService{
 	
 	@Override
 	public List<Book> getAllBooks() {
-		return bookRepository.findAll();
+		return bookRepository.customFindAllMine();
 	}
 
 	@Override
 	public Book getSingleBookById(long bookId) {
-		return bookRepository.getOne(bookId);
+		return bookRepository.findFirstById(bookId);
 	}
 
 	@Override

@@ -9,7 +9,9 @@ import org.springframework.stereotype.Component;
 import pl.coderslab.app.Book;
 
 public interface BookRepository extends JpaRepository<Book, Long> {
-	@Query(value = "SELECT * FROM books", nativeQuery = true)
-	List<Book> customFindAllMoje();
+	@Query(value = "SELECT * FROM books ORDER BY id", nativeQuery = true)
+	List<Book> customFindAllMine();
+	
+	Book findFirstById(long Id);
 
 }
