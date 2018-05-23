@@ -1,6 +1,5 @@
 package pl.coderslab.controllers;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,39 +12,39 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import pl.coderslab.app.Book;
 import pl.coderslab.app.BookService;
+import pl.coderslab.app.DatabaseBookService;
 import pl.coderslab.app.MemoryBookService;
 
 @RestController
-public class BookController {
+public class BookControllerDatabase {
 	
-	public BookService bookService;
+public BookService bookService;
 	
 	@Autowired
-	public BookController(@Qualifier("memoryBookService") BookService bookService) {
+	public BookControllerDatabase(@Qualifier("databaseBookService") BookService bookService) {
 		this.bookService = bookService;
 	}
 	
-	@GetMapping("/books/all")
+	@GetMapping("/booksDb/all")
 	@ResponseBody
 	public List<Book> getAllBooks() {
 		return bookService.getAllBooks();
 	}
 	
 	
-	@GetMapping("/books/{bookId}")
+	@GetMapping("/booksDb/{bookId}")
 	@ResponseBody
 	public Book getSingleBook(@PathVariable long bookId) {
 		return bookService.getSingleBookById(bookId);
 	}
 	
 	
-	@PostMapping("/books/add/")
+	@PostMapping("/booksDb/add/")
 	public @ResponseBody Book addBook(@RequestBody Book book) {
 		//System.out.println(book);
 		bookService.saveBook(book);
@@ -53,14 +52,14 @@ public class BookController {
 	}
 	
 	
-	@DeleteMapping("/books/remove/{bookId}") 
+	@DeleteMapping("/booksDb/remove/{bookId}") 
 	public String deleteBook(@PathVariable long bookId) {
 		bookService.deleteBook(bookId);
 		return "Ksiazke usunieto z listy.";
 	}
 	
 	
-	@PutMapping("/books/edit/")
+	@PutMapping("/booksDb/edit/")
 	public ResponseEntity<Book> editBook(@RequestBody Book book) {
 		Boolean status = bookService.editBook(book);
 		//System.out.println(status);
@@ -71,37 +70,10 @@ public class BookController {
 	}
 	
 	
-	@DeleteMapping("/books/remove/all") 
+	@DeleteMapping("/booksDb/remove/all") 
 	public String resetListOfBooks() {
 		bookService.bookListReset();
 		return "Lista zostala zresetowana.";
-	}
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//first two test controllers
-	@RequestMapping("/hello")
-	@ResponseBody
-	public String hello(){
-	return "{hello: World}";
-	}
-	
-	@RequestMapping("/helloBook")
-	@ResponseBody
-	public Book helloBook(){
-	return new Book(1L,"9788324631766","Thiniking in Java",	"Bruce Eckel","Helion","programming");
 	}
 
 }

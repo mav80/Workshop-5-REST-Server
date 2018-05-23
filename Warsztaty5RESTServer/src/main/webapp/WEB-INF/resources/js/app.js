@@ -4,7 +4,8 @@
     
     console.log('DOM załadowany.');
 
-    var serverUrl = "http://localhost:8080/Warsztaty5RESTServer/books/";
+    //var serverUrl = "http://localhost:8080/Warsztaty5RESTServer/books/";
+    var serverUrl = "http://localhost:8080/Warsztaty5RESTServer/booksDb/";
 
 
 

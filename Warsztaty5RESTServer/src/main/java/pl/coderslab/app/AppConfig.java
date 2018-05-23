@@ -21,7 +21,7 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "pl.coderslab")
-//@EnableJpaRepositories(basePackages = "pl.coderslab.repositories") //wyrzucamy to i poniższe entity managery - nie będą nam potrzebne bo połączenie z bazą jest nam zbędne
+@EnableJpaRepositories(basePackages = "pl.coderslab.repositories") 
 @EnableTransactionManagement
 public class AppConfig implements WebMvcConfigurer {
 	
@@ -38,18 +38,18 @@ public class AppConfig implements WebMvcConfigurer {
 		configurer.enable();
 	}
 	
-//	@Bean
-//	public LocalEntityManagerFactoryBean entityManagerFactory() {
-//	LocalEntityManagerFactoryBean emfb = new LocalEntityManagerFactoryBean();
-//	emfb.setPersistenceUnitName("bookstorePersistenceUnit");
-//	return emfb; }
-//	
-//	
-//	
-//	@Bean
-//	public JpaTransactionManager transactionManager(EntityManagerFactory emf) {
-//	JpaTransactionManager tm = new JpaTransactionManager(emf);
-//	return tm; }
+	@Bean
+	public LocalEntityManagerFactoryBean entityManagerFactory() {
+	LocalEntityManagerFactoryBean emfb = new LocalEntityManagerFactoryBean();
+	emfb.setPersistenceUnitName("bookstorePersistenceUnit");
+	return emfb; }
+	
+	
+	
+	@Bean
+	public JpaTransactionManager transactionManager(EntityManagerFactory emf) {
+	JpaTransactionManager tm = new JpaTransactionManager(emf);
+	return tm; }
 	
 	
 	
