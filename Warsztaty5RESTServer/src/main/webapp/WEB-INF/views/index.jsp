@@ -54,7 +54,7 @@
 	        
 	        <span style="display: inline-block">
 	        	<form:form method="post" action="books/edit/" modelAttribute="book" id="editBookForm">
-	        		<form:input path="id" placeholder="id" type="number"/>
+	        		<form:input path="id" placeholder="numer id" type="number"/>
 					<form:input path="isbn" placeholder="numer isbn" type="number"/><br>
 					<form:input path="title" placeholder="tytuł"/>
 					<form:input path="author" placeholder="autor"/><br>

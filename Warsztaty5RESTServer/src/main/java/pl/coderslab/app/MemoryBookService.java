@@ -100,7 +100,6 @@ public class MemoryBookService implements BookService {
 					book.setIsbn(bookToChange.getIsbn());
 					return true;
 				}
-				return false;
 			}
 		}
 		return false;
