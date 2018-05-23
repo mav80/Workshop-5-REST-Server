@@ -1,10 +1,11 @@
-package pl.coderslab.app;
+package pl.coderslab.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import pl.coderslab.app.Book;
 import pl.coderslab.repositories.BookRepository;
 
 @Component

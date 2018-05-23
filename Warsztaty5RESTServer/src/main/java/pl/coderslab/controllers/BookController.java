@@ -18,13 +18,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import pl.coderslab.app.Book;
-import pl.coderslab.app.BookService;
-import pl.coderslab.app.MemoryBookService;
+import pl.coderslab.services.BookService;
 
 @RestController
 public class BookController {
 	
-	public BookService bookService;
+	public pl.coderslab.services.BookService bookService;
 	
 	@Autowired
 	public BookController(@Qualifier("memoryBookService") BookService bookService) {

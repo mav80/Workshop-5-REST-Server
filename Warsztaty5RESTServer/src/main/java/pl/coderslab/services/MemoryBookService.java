@@ -1,9 +1,11 @@
-package pl.coderslab.app;
+package pl.coderslab.services;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
+
+import pl.coderslab.app.Book;
 
 @Component
 public class MemoryBookService implements BookService {

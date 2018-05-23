@@ -1,6 +1,8 @@
-package pl.coderslab.app;
+package pl.coderslab.services;
 
 import java.util.List;
+
+import pl.coderslab.app.Book;
 
 public interface BookService {
 	
