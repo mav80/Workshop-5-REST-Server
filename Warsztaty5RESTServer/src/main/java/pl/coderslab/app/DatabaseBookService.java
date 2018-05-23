@@ -81,15 +81,15 @@ public class DatabaseBookService implements BookService{
 		bookRepository.save(book4);
 		
 		Book book5 = new Book();
-		book5.setIsbn("3456347");
+		book5.setIsbn("95463453");
 		book5.setTitle("Trawa jest zielona");
 		book5.setAuthor("Captain Obvious");
-		book5.setPublisher("Muj wydaffca");
+		book5.setPublisher("Muj wydafca");
 		book5.setType("oczywistość");
 		bookRepository.save(book5);
 		
 		Book book6 = new Book();
-		book6.setIsbn("3456347");
+		book6.setIsbn("132435546");
 		book6.setTitle("Dom na wyrębach");
 		book6.setAuthor("Stefan Darda");
 		book6.setPublisher("Videograf");
@@ -97,7 +97,7 @@ public class DatabaseBookService implements BookService{
 		bookRepository.save(book6);
 		
 		Book book7 = new Book();
-		book7.setIsbn("3456347");
+		book7.setIsbn("34647");
 		book7.setTitle("Czas pogardy");
 		book7.setAuthor("Andrzej Sapkowski");
 		book7.setPublisher("Putnam");
@@ -105,7 +105,7 @@ public class DatabaseBookService implements BookService{
 		bookRepository.save(book7);
 		
 		Book book8 = new Book();
-		book8.setIsbn("3456347");
+		book8.setIsbn("789843543");
 		book8.setTitle("Rusz głową - Java");
 		book8.setAuthor("Sierra Kathy, Bates Bert");
 		book8.setPublisher("Menio");
@@ -113,7 +113,7 @@ public class DatabaseBookService implements BookService{
 		bookRepository.save(book8);
 		
 		Book book9 = new Book();
-		book9.setIsbn("3456347");
+		book9.setIsbn("435354654");
 		book9.setTitle("W pustyni i w paszczy");
 		book9.setAuthor("Henryk Sienkiewicz");
 		book9.setPublisher("Horyzonty");
@@ -121,7 +121,7 @@ public class DatabaseBookService implements BookService{
 		bookRepository.save(book9);
 		
 		Book book10 = new Book();
-		book10.setIsbn("3456347");
+		book10.setIsbn("768745675");
 		book10.setTitle("Pan Tadeusz, czyli Ostatni zajazd na Litwie");
 		book10.setAuthor("Adam Mickiewicz");
 		book10.setPublisher("Ossolineum");

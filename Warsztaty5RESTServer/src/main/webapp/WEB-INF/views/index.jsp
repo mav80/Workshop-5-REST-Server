@@ -17,8 +17,12 @@
         <p style="text-align: justify">Celem warsztatu jest jest napisanie funkcjonalności backendowej do katalogowania książek metodą 
         REST z poprzedniego warsztatu. Do stworzenia API wykorzystałem Spring MVC, bibliotekę Jackson oraz dodatkowe adnotacje.
         Warstwa kliencka, napisana w HTML-u  oraz JavaScripcie, tak jak poprzednio, komunikuje się z serwerem za pomocą AJAX i 
-        po najechaniu myszką na element zawierający tytuł książki pobiera w formacie JSON dane o książce 
-        a następnie wyświetla je poniżej.</p>
+        po najechaniu myszką na element zawierający tytuł książki pobiera w formacie JSON dane o książce a następnie wyświetla je 
+        poniżej. Dane trzymane są w pamięci ulotnej.<br>
+        <br>
+        Możliwości serwera rozszerzyłem, za pomocą Hibernate i Spring Data, o możliwość zapisu książek do bazy danych znajdującej 
+        się na dysku - dzięki temu dane nie są tracone podczas każdego restartu serwera. Użytkownik może swobodnie przełączać się
+        pomiędzy pamięcią ulotną a bazą danych.</p>
         
 		<center>
 		
